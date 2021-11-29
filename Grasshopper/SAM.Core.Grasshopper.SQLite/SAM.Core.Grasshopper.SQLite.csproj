@@ -42,6 +42,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\..\build\</OutputPath>
+    <DocumentationFile>..\..\build\SAM.Core.Grasshopper.SQLite.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -119,8 +124,10 @@ set SAM_DIR=$(APPDATA)\SAM\
 if not exist "%25SAM_DIR%25" mkdir "%25SAM_DIR%25"
 
 copy "$(TargetDir)*.dll" "%25SAM_DIR%25"
+
 xcopy "$(TargetDir)\x64\*" "%25SAM_DIR%25\x64\" /S /Y
 xcopy "$(TargetDir)\x86\*" "%25SAM_DIR%25\x86\" /S /Y
+
 copy "%25SAM_DIR%25\$(ProjectName).dll" "%25SAM_DIR%25\$(ProjectName).gha"
 
 ::erase "%25SAM_DIR%25$(ProjectName).dll"
