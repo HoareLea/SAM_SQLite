@@ -119,6 +119,8 @@ set SAM_DIR=$(APPDATA)\SAM\
 if not exist "%25SAM_DIR%25" mkdir "%25SAM_DIR%25"
 
 copy "$(TargetDir)*.dll" "%25SAM_DIR%25"
+xcopy "$(TargetDir)\x64\*" "%25SAM_DIR%25\x64\" /S /Y
+xcopy "$(TargetDir)\x86\*" "%25SAM_DIR%25\x86\" /S /Y
 copy "%25SAM_DIR%25\$(ProjectName).dll" "%25SAM_DIR%25\$(ProjectName).gha"
 
 ::erase "%25SAM_DIR%25$(ProjectName).dll"
