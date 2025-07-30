@@ -37,15 +37,8 @@
     <OutputPath>..\..\build\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Classes\" />
-    <Folder Include="Component\" />
-    <Folder Include="Convert\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Query\" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Grasshopper">
-      <Version>8.19.25132.1001</Version>
+      <Version>8.21.25188.17001</Version>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
